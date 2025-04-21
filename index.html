@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Controle seus gastos mensais de forma simples e eficiente com nossa calculadora de finanças pessoais. Organize despesas por categoria e mantenha-se dentro do seu orçamento.">
+<meta name="keywords" content="calculadora de gastos, finanças pessoais, controle financeiro, orçamento mensal">
+<meta name="author" content="riquelme.dev">
+<meta name="theme-color" content="#30382f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:title" content="Calculadora de Gastos Mensais">
+<meta property="og:description" content="Controle seus gastos mensais de forma simples e eficiente com nossa calculadora de finanças pessoais.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://riquelme.dev/calculadora-gastos">
+<meta property="og:image" content="https://riquelme.dev/assets/images/calculadora-preview.jpg">
+<title>Calculadora de Gastos Mensais | riquelme.dev</title>
+<link rel="stylesheet" href="/calculadora-gastos/style.css">
+<link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Gastos Mensais</h1>
+        
+        <div class="form-group">
+            <label for="monthly-limit">Limite Mensal (R$):</label>
+            <input type="number" id="monthly-limit" min="0" step="0.01" placeholder="Digite seu limite mensal">
+        </div>
+        
+        <h2>Adicionar Gasto</h2>
+        <div class="form-group">
+            <label for="expense-value">Valor (R$):</label>
+            <input type="number" id="expense-value" min="0.01" step="0.01" placeholder="Digite o valor do gasto">
+        </div>
+        
+        <div class="form-group">
+            <label for="expense-category">Categoria:</label>
+            <select id="expense-category">
+                <option value="alimentacao">Alimentação</option>
+                <option value="transporte">Transporte</option>
+                <option value="lazer">Lazer</option>
+                <option value="moradia">Moradia</option>
+                <option value="saude">Saúde</option>
+                <option value="educacao">Educação</option>
+                <option value="outros">Outros</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="expense-description">Descrição (opcional):</label>
+            <input type="text" id="expense-description" placeholder="Digite uma descrição">
+        </div>
+        
+        <button id="add-expense">Adicionar Gasto</button>
+        
+        <div class="filter-controls">
+            <label for="filter-category">Filtrar por categoria:</label>
+            <select id="filter-category">
+                <option value="todos">Todos</option>
+                <option value="alimentacao">Alimentação</option>
+                <option value="transporte">Transporte</option>
+                <option value="lazer">Lazer</option>
+                <option value="moradia">Moradia</option>
+                <option value="saude">Saúde</option>
+                <option value="educacao">Educação</option>
+                <option value="outros">Outros</option>
+            </select>
+        </div>
+        
+        <div class="summary">
+            <h2>Resumo</h2>
+            <p>Total gasto: R$ <span id="total-spent">0.00</span></p>
+            <p>Limite mensal: R$ <span id="limit-display">0.00</span></p>
+            <p>Você ainda pode gastar: R$ <span id="remaining">0.00</span></p>
+        </div>
+        
+        <div class="expenses-list">
+            <h2>Gastos</h2>
+            <div id="expenses-container">
+                <!-- Os gastos serão adicionados aqui dinamicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/calculadora-gastos/script.js"></script>
+</body>
+</html>
